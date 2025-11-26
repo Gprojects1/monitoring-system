@@ -1,0 +1,14 @@
+[Unit]
+Description=Web Application Monitor Timer
+Requires=monitor.service
+
+[Timer]
+# Запуск каждые 30 секунд
+OnBootSec=1min
+OnUnitActiveSec=30s
+
+# Параметры точности
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
