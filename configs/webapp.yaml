@@ -1,0 +1,5 @@
+# Конфигурация веб-приложения
+host: "0.0.0.0"
+port: 5000
+log_file: "/var/log/webapp/app.log"
+log_level: "info"  # debug, info, warning, error

@@ -1,0 +1,14 @@
+[Unit]
+Description=Web Application Monitor Service (Go)
+After=network.target webapp.service
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/webapp
+ExecStart=/opt/webapp/bin/monitor
+
+# Логирование
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=webapp-monitor

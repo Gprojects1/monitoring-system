@@ -1,0 +1,27 @@
+[Unit]
+Description=Hello World Web Application (Go)
+After=network.target
+Documentation=https://github.com/yourusername/monitoring-system
+
+[Service]
+Type=simple
+User=webapp
+Group=webapp
+WorkingDirectory=/opt/webapp
+ExecStart=/opt/webapp/bin/webapp
+
+# Автоматический перезапуск при падении
+Restart=on-failure
+RestartSec=5s
+
+# Ограничения безопасности
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Логирование
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=webapp
+
+[Install]
+WantedBy=multi-user.target
