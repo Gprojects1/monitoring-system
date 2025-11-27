@@ -33,7 +33,7 @@ echo -e "${YELLOW}[1/7] Остановка сервисов...${NC}"
 systemctl stop monitor.timer || true
 systemctl stop monitor.service || true
 systemctl stop webapp.service || true
-# Убить процессы на всякий случай
+# Убить процессы 
 pkill -9 webapp 2>/dev/null || true
 pkill -9 monitor 2>/dev/null || true
 echo -e "${GREEN}✓ Сервисы остановлены${NC}"
