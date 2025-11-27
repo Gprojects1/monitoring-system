@@ -1,0 +1,10 @@
+# Конфигурация системы мониторинга
+app_url: "http://localhost:5000"
+health_endpoint: "/health"
+timeout: 5
+max_retries: 3
+retry_delay: 5
+service_name: "webapp.service"
+log_file: "/var/log/webapp/monitor.log"
+log_level: "info"
+use_systemd: true
