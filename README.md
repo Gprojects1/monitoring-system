@@ -11,7 +11,7 @@ make deps
 ## Собрать проект
 ```bash
 make build
-
+```
 ## Установить
 ```bash
 sudo bash scripts/install.sh
@@ -38,6 +38,7 @@ sudo systemctl status monitor.timer
 # Конфигурация
 
 Приложение: configs/webapp.yaml
+
 Мониторинг: configs/monitor.yaml
 
 Интервал мониторинга: каждые 30 секунд
@@ -61,7 +62,9 @@ sudo systemctl restart webapp.service
 # API Endpoints
 
 GET /          - Hello World
+
 GET /health    - Health check
+
 GET /status    - Расширенный статус
 
 Пример:
@@ -80,27 +83,34 @@ sudo bash scripts/uninstall.sh --full
 ```
 # Структура проекта
 
-monitoring-system/
-├── cmd/          - Исходный код приложений
-├── internal/     - Внутренние пакеты
-├── configs/      - Конфигурационные файлы
-├── systemd/      - Systemd сервисы
-└── scripts/      - Скрипты установки/удаления
+monitoring-system/  
+├── cmd/          - Исходный код приложений  
+├── internal/     - Внутренние пакеты  
+├── configs/      - Конфигурационные файлы  
+├── systemd/      - Systemd сервисы  
+└── scripts/      - Скрипты установки/удаления  
 
 # Команды Make
 
 make build       - Сборка проекта
+
 make build-prod  - Сборка с оптимизацией
+
 make deps        - Установка зависимостей
 make clean       - Очистка
+
 make fmt         - Форматирование кода
+
 make lint        - Проверка кода
+
 make run-webapp  - Локальный запуск приложения
+
 make run-monitor - Локальный запуск монитора
 
 # Логи
 
 Логи приложения: /var/log/webapp/app.log
+
 Логи мониторинга: /var/log/webapp/monitor.log
 
 ## Посмотреть логи через journald
